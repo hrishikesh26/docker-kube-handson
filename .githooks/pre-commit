@@ -1,0 +1,11 @@
+#!/bin/sh
+# Block commits made directly on main. Work on a branch instead.
+branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+
+if [ "$branch" = "main" ]; then
+  echo "ERROR: You are committing directly to 'main'."
+  echo "Create a branch first, e.g.:"
+  echo "  git switch -c feat/day1-docker-basics"
+  echo "Your staged changes come with you to the new branch."
+  exit 1
+fi

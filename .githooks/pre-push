@@ -1,0 +1,12 @@
+#!/bin/sh
+# Block pushes to main. Changes reach main only through a Pull Request.
+while read -r local_ref local_sha remote_ref remote_sha; do
+  if [ "$remote_ref" = "refs/heads/main" ]; then
+    echo "ERROR: Pushing to 'main' is not allowed."
+    echo "Push your branch and open a Pull Request:"
+    echo "  git push -u origin HEAD"
+    echo "  gh pr create --fill"
+    exit 1
+  fi
+done
+exit 0
