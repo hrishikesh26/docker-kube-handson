@@ -1,0 +1,28 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Secrets / local config — never commit these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+kubeconfig*
+secrets/
+
+# Kubernetes / Helm local artifacts
+charts/*.tgz
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
