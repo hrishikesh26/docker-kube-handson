@@ -1,5 +1,6 @@
 # Python
 .venv/
+.venv-wsl/
 venv/
 __pycache__/
 *.py[cod]
@@ -26,3 +27,4 @@ Thumbs.db
 
 # Logs
 *.log
+logs/
