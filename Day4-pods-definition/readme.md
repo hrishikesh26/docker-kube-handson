@@ -1,0 +1,1 @@
+- create an nginx pod (or other relevant pod) through kubectl imperative way

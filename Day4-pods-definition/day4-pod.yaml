@@ -1,0 +1,14 @@
+# sample pod yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  labels:
+    env: demo
+    type: frontend
+spec:
+  containers:
+  - name: todo
+    image: todo:multistage
+    ports:
+    - containerPort: 5000
