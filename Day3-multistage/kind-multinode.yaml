@@ -1,0 +1,17 @@
+# kind cluster config: 1 control plane + 2 workers
+# Create:  kind create cluster --config Day3-multistage/kind-multinode.yaml
+# Delete:  kind delete cluster --name kind-cluster-practice
+#
+# apiVersion = version of kind's config FILE FORMAT (v1alpha4 for kind v0.33.0)
+# image      = Kubernetes version inside each node (pinned by digest from the
+#              kind v0.33.0 release notes, so every node is identical)
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: kind-cluster-practice
+nodes:
+  - role: control-plane
+    image: kindest/node:v1.37.0@sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5
+  - role: worker
+    image: kindest/node:v1.37.0@sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5
+  - role: worker
+    image: kindest/node:v1.37.0@sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5
